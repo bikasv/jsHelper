@@ -8,13 +8,13 @@ This library is written in pure JavaScript and can be consumed in any web projec
 ##Functions Available :
 
 ###DOM Methods -
-* `getNodeText` - Returns the text of node, without text of it's children.
-* `isCssPropertySupported` - Returns if a CSS property is supported by browser or not.
-* `isAttributeSupported` - Checks if an attribute is supported by given element on the browser.
-* `createPlaceholder` - Converts placeholder attribute to actual placeholder for the browser which doesn't support it.
+* `jsHelper.getNodeText` - Returns the text of node, without text of it's children.
+* `jsHelper.isCssPropertySupported` - Returns if a CSS property is supported by browser or not.
+* `jsHelper.isAttributeSupported` - Checks if an attribute is supported by given element on the browser.
+* `jsHelper.createPlaceholder` - Converts placeholder attribute to actual placeholder for the browser which doesn't support it.
 
 ###Non-DOM Methods -
-* `mergeObjects` - Merges two or objects recursively and returns the resulting Object.
-* `concat` - Concats two or more arrays and return concatenated array.
+* `jsHelper.mergeObjects` - Merges two or objects recursively and returns the resulting Object.
+* `jsHelper.concat` - Concats two or more arrays and return concatenated array.
 
 You can read in details about these methods in the JavaScript file which is well documented.
