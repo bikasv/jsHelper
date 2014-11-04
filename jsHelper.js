@@ -12,7 +12,7 @@ var jsHelper = (function () {
     var getNodeText = function(elm) {
         if(!elm) {
             return;
-        } else if(elm[0]) {
+        } else if(typeof elm === "array") {
             elm = elm[0];
         }
 
@@ -50,14 +50,14 @@ var jsHelper = (function () {
 
     /**
      * This function checks whether the element supports the provided attribute. E.g. you can check if `plceholder` is supported by `input` or not.
-     * @param  {HTMLObject}  element   Javascript or jQuery element.
+     * @param  {HTMLObject/String}  element   Javascript or jQuery element or element name.
      * @param  {string}  attribute Name of the attribute to test
      * @return {Boolean}           Returns `true` if property is supported, `false` otherwise
      */
     var isAttributeSupported = function(element, attribute) {
         if(!element) {
             return false;
-        } else if(element[0]) {
+        } else if(typeof element === 'array') {
             element = element[0];
         }
 
