@@ -1,9 +1,9 @@
 JavaScript Helper Function
 --------------------------------
 
-    This simple JavaScript library collects various functions to help you with writing codes more efficiently. It has both DOM and non-DOM methods, which generally not quite easy to write.
+This simple JavaScript library collects various functions to help you with writing codes more efficiently. It has both DOM and non-DOM methods, which generally not quite easy to write.
 
-    This library is written in pure JavaScript and can be consumed in any web project irrespective of what other libraries or frameworks are being used.
+This library is written in pure JavaScript and can be consumed in any web project irrespective of what other libraries or frameworks are being used.
 
 ##Functions Available :
 
