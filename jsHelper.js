@@ -12,7 +12,7 @@ var jsHelper = (function () {
     var getNodeText = function(elm) {
         if(!elm) {
             return;
-        } else if(typeof elm === Array) {
+        } else if(elm instanceof Array) {
             elm = elm[0];
         }
 
@@ -57,7 +57,7 @@ var jsHelper = (function () {
     var isAttributeSupported = function(element, attribute) {
         if(!element) {
             return false;
-        } else if(typeof element === Array) {
+        } else if(element instanceof Array) {
             element = element[0];
         }
 
