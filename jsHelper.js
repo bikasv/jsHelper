@@ -12,7 +12,7 @@ var jsHelper = (function () {
     var getNodeText = function(elm) {
         if(!elm) {
             return;
-        } else if(typeof elm === "array") {
+        } else if(typeof elm === Array) {
             elm = elm[0];
         }
 
@@ -57,7 +57,7 @@ var jsHelper = (function () {
     var isAttributeSupported = function(element, attribute) {
         if(!element) {
             return false;
-        } else if(typeof element === 'array') {
+        } else if(typeof element === Array) {
             element = element[0];
         }
 
@@ -182,6 +182,37 @@ var jsHelper = (function () {
         }
         return returnArray;
     };
+
+    /**
+     * This function checks if two objects are same, i.e. if they contain same parameters with same values
+     * @param  {Object}  objects Two objects to compare
+     * @return {Boolean}         Returns true or false based on equality of objects
+     */
+    var isEqual = function() {
+        var objects = arguments.length;
+
+        if(objects < 2) {
+            return false;
+        } else if(!(objects[0] && typeof objects[0] === "object") || !(objects[1] && typeof objects[1] === "object")) {
+            return false;
+        }
+
+        var firstProp = Object.getOwnPropertyNames(objects[0]);
+        var secondProp = Object.getOwnPropertyNames(objects[1]);
+
+        if (firstProp.length != secondProp.length) {
+            return false;
+        }
+
+        for (var i = 0; i < firstProp.length; i++) {
+            var propName = firstProp[i];
+            if (objects[0][propName] !== objects[1][propName]) {
+                return false;
+            }
+        }
+
+        return true;
+    };
     /*End Public methods*/
 
     /*Private methods*/
@@ -208,5 +239,6 @@ var jsHelper = (function () {
         mergeObjects: mergeObjects,
         concat: concat,
         createPlaceholder: createPlaceholder,
+        isEqual: isEqual,
     };
 } (jsHelper || {}));

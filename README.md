@@ -16,5 +16,6 @@ This library is written in pure JavaScript and can be consumed in any web projec
 ###Non-DOM Methods -
 * `jsHelper.mergeObjects` - Merges two or objects recursively and returns the resulting Object.
 * `jsHelper.concat` - Concats two or more arrays and return concatenated array.
+* `jsHelper.isEqual` - Checks whether two objects are equal or not.
 
 You can read in details about these methods in the JavaScript file which is well documented.
