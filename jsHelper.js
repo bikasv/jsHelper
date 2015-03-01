@@ -156,34 +156,6 @@ var jsHelper = (function () {
     };
 
     /**
-     * This function merges two or more arrays and returns back the resulting array.
-     * @param {Array} arrays Comma separated arrays to be concatenated. All arguments must be an array or empty array will be returned
-     * @return {Array} Concatenated array
-     */
-    var concat = function() {
-        var returnArray = [];
-        var nodesLength = arguments.length;
-
-        if(nodeLength < 2) {
-            return [];
-        }
-
-        for(var inc = 0; inc < nodesLength; inc++) {
-            if(!(arguments[inc] instanceof Array)) {
-                return [];
-            }
-
-            var nodeLength = arguments[inc].length;
-            for(var i = 0; i < nodeLength; i++) {
-                if(arguments[inc][i]) {
-                    returnArray.push(arguments[inc][i]);
-                }
-            }
-        }
-        return returnArray;
-    };
-
-    /**
      * This function checks if two objects are same, i.e. if they contain same parameters with same values
      * @param  {Object}  objects Two objects to compare
      * @return {Boolean}         Returns true or false based on equality of objects
@@ -213,6 +185,48 @@ var jsHelper = (function () {
 
         return true;
     };
+
+    /**
+     * This function merges two or more arrays and returns back the resulting array.
+     * @param {Array} arrays Comma separated arrays to be concatenated. All arguments must be an array or empty array will be returned
+     * @return {Array} Concatenated array
+     */
+    var concat = function() {
+        var returnArray = [];
+        var nodesLength = arguments.length;
+
+        if(nodeLength < 2) {
+            return [];
+        }
+
+        for(var inc = 0; inc < nodesLength; inc++) {
+            if(!(arguments[inc] instanceof Array)) {
+                return [];
+            }
+
+            var nodeLength = arguments[inc].length;
+            for(var i = 0; i < nodeLength; i++) {
+                if(arguments[inc][i]) {
+                    returnArray.push(arguments[inc][i]);
+                }
+            }
+        }
+        return returnArray;
+    };
+
+    /**
+     * This method returns array with unique values from the given array
+     * @param  {Array} array Array with duplicate values
+     * @return {Array}       Unique array
+     */
+    var uniqueArray = function(array) {
+        return array.reduce(function(unique, current) {
+            if (unique.indexOf(current) < 0) {
+                unique.push(current);
+            }
+            return unique;
+        }, []);
+    };
     /*End Public methods*/
 
     /*Private methods*/
@@ -240,5 +254,6 @@ var jsHelper = (function () {
         concat: concat,
         createPlaceholder: createPlaceholder,
         isEqual: isEqual,
+        uniqueArray: uniqueArray,
     };
 } (jsHelper || {}));
